@@ -1,5 +1,5 @@
 {% set name = "docquery" %}
-{% set version = "0.0.5" %}
+{% set version = "0.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/docquery-{{ version }}.tar.gz
-  sha256: 5c901bf438f13f24322d75cecba43fb24479b6f35965d6b6dd393b430442259a
+  sha256: d2045bb81baaa24ce8d0400435911293e33aea7ad17c836698b216895f7f22cc
 
 build:
   entry_points:
