@@ -21,15 +21,16 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - python >=3.7
-    - pytorch >=1.0
+    - easyocr
     - pdf2image
     - pdfplumber
     - pillow
     - pydantic
+    - python >=3.7
+    - pytorch >=1.0
     - pytesseract
     - requests
-    - transformers >=4.21
+    - transformers >=4.23
 
 test:
   imports:
