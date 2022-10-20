@@ -36,10 +36,7 @@ test:
   imports:
     - docquery
   commands:
-    - pip check
     - docquery --help
-  requires:
-    - pip
 
 about:
   home: https://github.com/impira/docquery
