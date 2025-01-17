@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/docquery-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/docquery-{{ version }}.tar.gz
   sha256: d2045bb81baaa24ce8d0400435911293e33aea7ad17c836698b216895f7f22cc
 
 build:
@@ -14,28 +14,34 @@ build:
     - docquery = docquery.cmd.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
+    - setuptools
   run:
     - easyocr
     - pdf2image
     - pdfplumber
     - pillow
-    - pydantic
-    - python >=3.7
+    # For compatibility pin pydantic <2
+    - pydantic <2
+    - python >={{ python_min }}
     - pytorch >=1.0
     - pytesseract
     - requests
     - transformers >=4.23
 
 test:
+  requires:
+    - pip
+    - python {{ python_min }}
   imports:
     - docquery
   commands:
+    - pip check
     - docquery --help
 
 about:
