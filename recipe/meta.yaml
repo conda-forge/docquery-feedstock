@@ -26,7 +26,8 @@ requirements:
     - pdf2image
     - pdfplumber
     - pillow
-    - pydantic
+    # For compatibility pin pydantic <2
+    - pydantic <2
     - python >={{ python_min }}
     - pytorch >=1.0
     - pytesseract
